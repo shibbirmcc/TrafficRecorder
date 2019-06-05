@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id "com.palantir.docker" version "0.22.1"
     id 'com.gradle.build-scan' version '2.0.2'
-    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
@@ -23,7 +23,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.9'
