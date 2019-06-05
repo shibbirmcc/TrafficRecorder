@@ -51,5 +51,4 @@ public class TrafficRecordController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-
 }

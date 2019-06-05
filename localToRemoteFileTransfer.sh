@@ -5,7 +5,7 @@ remoteDirectory=/root/workspace
 remoteUser=root
 host=119.15.159.104
 
-rsync --progress -ravz -e "ssh -i ./sshKeys/$host.ppk -p9876" \
+rsync --progress -ravz -e "ssh -i ./sshKeys/$host.ppk -p4569" \
 --exclude 'sshKeys' \
 --exclude '.git' \
 --exclude 'localToRemoteFileTransfer.sh' \
