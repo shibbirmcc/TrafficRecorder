@@ -16,23 +16,25 @@ public class Traffic {
 	private Time trafficReceivingTime;
 	private int campaignType;
 
-//	@JsonCreator
-//	public Traffic(@JsonProperty("publisherID") int publisherID, @JsonProperty("campaignID") int campaignID,
-//			@JsonProperty("ipAddress") String ipAddress,
-//			@JsonProperty("trafficReceivingParamValue") String trafficReceivingParamValue,
-//			@JsonProperty("trafficSendingParamValue") String trafficSendingParamValue,
-//			@JsonProperty("trafficReceivingDate") Date trafficReceivingDate,
-//			@JsonProperty("trafficReceivingTime") Time trafficReceivingTime,
-//			@JsonProperty("campaignType") int campaignType) {
-//		this.publisherID = publisherID;
-//		this.campaignID = campaignID;
-//		this.ipAddress = ipAddress;
-//		this.trafficReceivingParamValue = trafficReceivingParamValue;
-//		this.trafficSendingParamValue = trafficSendingParamValue;
-//		this.trafficReceivingDate = trafficReceivingDate;
-//		this.trafficReceivingTime = trafficReceivingTime;
-//		this.campaignType = campaignType;
-//	}
+	public Traffic() {}
+	
+	@JsonCreator
+	public Traffic(@JsonProperty("publisherID") int publisherID, @JsonProperty("campaignID") int campaignID,
+			@JsonProperty("ipAddress") String ipAddress,
+			@JsonProperty("trafficReceivingParamValue") String trafficReceivingParamValue,
+			@JsonProperty("trafficSendingParamValue") String trafficSendingParamValue,
+			@JsonProperty("trafficReceivingDate") Date trafficReceivingDate,
+			@JsonProperty("trafficReceivingTime") Time trafficReceivingTime,
+			@JsonProperty("campaignType") int campaignType) {
+		this.publisherID = publisherID;
+		this.campaignID = campaignID;
+		this.ipAddress = ipAddress;
+		this.trafficReceivingParamValue = trafficReceivingParamValue;
+		this.trafficSendingParamValue = trafficSendingParamValue;
+		this.trafficReceivingDate = trafficReceivingDate;
+		this.trafficReceivingTime = trafficReceivingTime;
+		this.campaignType = campaignType;
+	}
 
 	public int getPublisherID() {
 		return publisherID;
