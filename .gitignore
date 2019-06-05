@@ -1,5 +1,5 @@
 ###### Extra
-sshKeys/*.ppk
+sshKeys/*
 
 ########## Eclipse ################
 .metadata
