@@ -1,16 +1,13 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
-    }
+plugins {
+    id 'java'
+    id 'eclipse'
+    id "com.palantir.docker" version "0.22.1"
+    id 'com.gradle.build-scan' version '2.0.2'
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+group = 'adserver'
 
 bootJar {
 	mainClassName = 'com.adevrtisementserver.main.TrafficRecorder'
@@ -22,16 +19,17 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.8	
 targetCompatibility = 1.8
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.9'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.9'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
-	testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("junit:junit")
+	
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'junit:junit:4.12'
 }

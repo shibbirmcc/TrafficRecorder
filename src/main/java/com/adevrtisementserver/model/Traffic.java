@@ -16,6 +16,8 @@ public class Traffic {
 	private Time trafficReceivingTime;
 	private int campaignType;
 
+	public Traffic() {}
+	
 	@JsonCreator
 	public Traffic(@JsonProperty("publisherID") int publisherID, @JsonProperty("campaignID") int campaignID,
 			@JsonProperty("ipAddress") String ipAddress,

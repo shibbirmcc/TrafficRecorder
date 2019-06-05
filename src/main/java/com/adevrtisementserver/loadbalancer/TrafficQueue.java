@@ -11,7 +11,6 @@ import com.adevrtisementserver.model.Traffic;
 @Component
 public class TrafficQueue {
 	private Logger logger = LoggerFactory.getLogger(TrafficQueue.class);
-
 	private LinkedList<Traffic> traffics = new LinkedList<>();
 
 	public void add(Traffic t) {
@@ -27,10 +26,7 @@ public class TrafficQueue {
 
 	public int getQueueSize() {
 		synchronized (this) {
-			if (traffics.isEmpty())
-				return 0;
-			else
-				return traffics.size();
+			return (traffics.isEmpty() ? 0 : traffics.size());
 		}
 	}
 
