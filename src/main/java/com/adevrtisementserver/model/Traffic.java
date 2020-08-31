@@ -2,11 +2,9 @@ package com.adevrtisementserver.model;
 
 import java.sql.Date;
 import java.sql.Time;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Traffic {
-	
+
 	private int publisherID;
 	private int campaignID;
 	private String ipAddress;
@@ -14,18 +12,12 @@ public class Traffic {
 	private String trafficSendingParamValue;
 	private Date trafficReceivingDate;
 	private Time trafficReceivingTime;
-	private int campaignType;
 
-	public Traffic() {}
-	
-	@JsonCreator
-	public Traffic(@JsonProperty("publisherID") int publisherID, @JsonProperty("campaignID") int campaignID,
-			@JsonProperty("ipAddress") String ipAddress,
-			@JsonProperty("trafficReceivingParamValue") String trafficReceivingParamValue,
-			@JsonProperty("trafficSendingParamValue") String trafficSendingParamValue,
-			@JsonProperty("trafficReceivingDate") Date trafficReceivingDate,
-			@JsonProperty("trafficReceivingTime") Time trafficReceivingTime,
-			@JsonProperty("campaignType") int campaignType) {
+	public Traffic() {
+	}
+
+	public Traffic(int publisherID, int campaignID, String ipAddress, String trafficReceivingParamValue,
+			String trafficSendingParamValue, Date trafficReceivingDate, Time trafficReceivingTime) {
 		this.publisherID = publisherID;
 		this.campaignID = campaignID;
 		this.ipAddress = ipAddress;
@@ -33,7 +25,6 @@ public class Traffic {
 		this.trafficSendingParamValue = trafficSendingParamValue;
 		this.trafficReceivingDate = trafficReceivingDate;
 		this.trafficReceivingTime = trafficReceivingTime;
-		this.campaignType = campaignType;
 	}
 
 	public int getPublisherID() {
@@ -92,19 +83,11 @@ public class Traffic {
 		this.trafficReceivingTime = trafficReceivingTime;
 	}
 
-	public int getCampaignType() {
-		return campaignType;
-	}
-
-	public void setCampaignType(int campaignType) {
-		this.campaignType = campaignType;
-	}
-
 	@Override
 	public String toString() {
 		return "Traffic [publisherID=" + publisherID + ", campaignID=" + campaignID + ", ipAddress=" + ipAddress
 				+ ", trafficReceivingParamValue=" + trafficReceivingParamValue + ", trafficSendingParamValue="
 				+ trafficSendingParamValue + ", trafficReceivingDate=" + trafficReceivingDate
-				+ ", trafficReceivingTime=" + trafficReceivingTime + ", campaignType=" + campaignType + "]";
+				+ ", trafficReceivingTime=" + trafficReceivingTime + "]";
 	}
 }
